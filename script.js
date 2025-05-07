@@ -1,10 +1,11 @@
 const userInput = document.getElementById("user-input");
 const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
-const resultDiv = document.getElementById("result-div");
+const resultsDiv = document.getElementById("results-div");
 
 const validatePhoneNumber = (phoneNumber) => {
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+  // Regular expression to match US phone numbers
+  const phoneRegex = /^1?\s*(?:\(\d{3}\)|\d{3})[\s-]?\d{3}[\s-]?\d{4}$/;
     return phoneRegex.test(phoneNumber);
 }
 
@@ -16,11 +17,11 @@ checkBtn.addEventListener("click", () => {
     }
     else {
         const isValid = validatePhoneNumber(phoneNumber);
-        resultDiv.textContent = isValid ? `Valid US number: ${phoneNumber}` : `Invalid US number: ${phoneNumber}`;
+        resultsDiv.textContent = isValid ? `Valid US number: ${phoneNumber}` : `Invalid US number: ${phoneNumber}`;
     }
 });
 
 clearBtn.addEventListener("click", () => {
   userInput.value = "";
-  resultDiv.textContent = "";
+  resultsDiv.textContent = "";
 });
