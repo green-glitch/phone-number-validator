@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <title>Phone Number Validator</title>
 </head>
-<body>
+<body data-bs-theme="dark">
     <div class="container mt-5">
         <h1>Phone Number Validator</h1>
         <p>Enter a phone number to check its validity.</p>
         <input type="text" id="user-input" class="form-control" placeholder="Enter phone number">
-        <button id="check-btn" class="btn btn-primary">Check</button>
+        <div class="mt-2">
+            <button id="check-btn" class="btn btn-success">Check</button>
         <button id="clear-btn" class="btn btn-secondary">Clear</button>
-        <div id="results-div"></div>
+        </div>
+        <div id="results-div" class="mt-2"></div>
     </div>
     <script src="script.js"></script>
 </body>
